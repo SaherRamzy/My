@@ -22,18 +22,17 @@ public class SecondActivity extends ActionBarActivity {
             }
 
             @Override
-            protected String doInBackground(Void... voids) {
+            protected Void doInBackground(Void... voids) {
                 gson = new Gson();
                 handler = new ServiceHandler();
                 String jsondata =handler.makeServiceCall("\n" +
                         "https://api.github.com/users/3bdoelnaggar", ServiceHandler.GET, null);
-                JsonUser jsonUserr = new JsonUser();
-                jsonUserr =gson.fromJson(jsondata,JsonUser.class);
+                JsonUser jsonUserr = gson.fromJson(jsondata,JsonUser.class);
 
-                Toast.makeText(this,jsonUserr.id(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,jsonUserr.getId(),Toast.LENGTH_SHORT).show();
 
 
-                return jsondata;
+
             }
 
             @Override
