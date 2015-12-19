@@ -45,6 +45,7 @@ public class ServiceHandler {
             // Checking http request method type
             if (method == POST) {
                 HttpPost httpPost = new HttpPost(url);
+                httpPost.setHeader("user_key","6481bd85e54b38b2c6c33e0168a8dfab");
                 // adding post params
                 if (params != null) {
                     httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -60,6 +61,7 @@ public class ServiceHandler {
                     url += "?" + paramString;
                 }
                 HttpGet httpGet = new HttpGet(url);
+                httpGet.setHeader("user_key","6481bd85e54b38b2c6c33e0168a8dfab");
 
                 httpResponse = httpClient.execute(httpGet);
 
